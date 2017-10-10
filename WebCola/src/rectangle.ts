@@ -436,12 +436,11 @@ import {Point} from './geom'
 
             if (avoidOverlaps && rootGroup && typeof rootGroup.groups !== 'undefined') {
                 nodes.forEach(v => {
-					if (!v.width || !v.height)
-					{
-						//If undefined, default to nothing
-						v.bounds = new Rectangle(v.x, v.x, v.y, v.y);
-						return;
-					}
+                    if (!v.width || !v.height) {
+                        // if undefined, default to nothing
+                        v.bounds = new Rectangle(v.x, v.x, v.y, v.y);
+                        return;
+                    }
                     var w2 = v.width / 2, h2 = v.height / 2;
                     v.bounds = new Rectangle(v.x - w2, v.x + w2, v.y - h2, v.y + h2);
                 });
